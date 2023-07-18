@@ -13,7 +13,6 @@ function App() {
   // };
   function addTodo(todo) {
     settodos([...todos, { id: nextId++, name: todo }]);
-    console.log(todos);
   }
 
   function deleteTodo(id) {

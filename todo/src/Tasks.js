@@ -4,7 +4,7 @@ const Tasks = ({ tasks, deleteTodo }) => {
   return (
     <div>
       {tasks.name + " "}
-      {tasks.id}
+      {/* {tasks.id} */}
 
       <button onClick={() => deleteTodo(tasks.id)}> delete</button>
       <button> edit</button>

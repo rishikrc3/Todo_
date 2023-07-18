@@ -1,27 +1,23 @@
 import { useState } from "react";
-let nextId = 0;
-export default function Form() {
+export default function Form({ addTodo }) {
   const [message, setmessage] = useState("");
-  const [tasks, settasks] = useState([]);
-  const [completedtasks, setcompletedtasks] = useState([]);
 
-  function handleClick() {
-    settasks([...tasks, { id: nextId++, name: message }]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    addTodo(message);
+    setmessage("");
   }
   return (
     <>
-      <input onChange={(e) => setmessage(e.target.value)} value={message} />
-      <button onClick={handleClick}>Enter</button>
-
-      <h2>Completed tasks</h2>
-      <h2>Pending tasks</h2>
-      <ul>
-        {tasks.map((tasks) => (
-          <li key={tasks.id}>
-            {tasks.name} <button> Delete</button>
-          </li>
-        ))}
-      </ul>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="What you gonna do?"
+          onChange={(e) => setmessage(e.target.value)}
+          value={message}
+        />
+        <button type="submit">Add Task</button>
+      </form>
     </>
   );
 }

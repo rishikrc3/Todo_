@@ -48,8 +48,14 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "360px", // Minimum width for the big button
     height: "80px", // Set the height of the big button
     fontSize: "24px", // Increase the font size of the big button text
-    backgroundColor: "#426b1f", // Set the background color to white
-    color: "white", // Set the text color to green
+    backgroundColor: "#426b1f", // Set the background color to green
+    color: "white", // Set the text color to white
+    "&:hover": {
+      backgroundColor: "#2b4811", // Darker green on hover
+    },
+    [theme.breakpoints.down("md")]: {
+      flexWrap: "wrap", // Full width on medium and smaller screens
+    },
   },
   headingContainer: {
     textAlign: "center", // Center align the text

@@ -5,6 +5,7 @@ import LandingPage from "./components/Landing";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
 import Buttons from "./components/Buttons";
+import Footer from "./components/Footer";
 import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Navbar />
       <SearchBar />
       <Buttons />
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

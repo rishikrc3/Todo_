@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white", // Text color
     marginLeft: theme.spacing(2),
     "&:hover": {
-      backgroundColor: "#009900", // Darker green color on hover
+      backgroundColor: "#2b4811", // Darker green color on hover
     },
     [theme.breakpoints.down("sm")]: {
       display: "none", // Hide the login/signup button on small screens

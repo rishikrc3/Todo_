@@ -41,6 +41,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white", // Set the background color to white
     color: "#426b1f", // Set the text color to green
   },
+  bigButton: {
+    flex: "1 0 100%", // Full width for the big button
+    minWidth: "360px", // Minimum width for the big button
+    height: "80px", // Set the height of the big button
+    fontSize: "24px", // Increase the font size of the big button text
+    backgroundColor: "#426b1f", // Set the background color to white
+    color: "white", // Set the text color to green
+  },
   headingContainer: {
     textAlign: "center", // Center align the text
     marginBottom: "10px",
@@ -48,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontFamily: "var(--font-newsreader)",
     color: "#000000",
-    fontSize: "32px",
-    fontWeight: "bold",
+    fontSize: "70px",
+    fontWeight: "",
     letterSpacing: "-0.02em",
   },
 }));
@@ -66,16 +74,23 @@ const Buttons = () => {
       </div>
       <div className={classes.buttonsContainer}>
         <Button variant="contained" color="success" className={classes.button}>
-          Button 1
+          Java <br />
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
-          Button 2
+          C++
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
-          Button 3
+          C
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
-          Button 4
+          Python
+        </Button>
+        <Button
+          variant="contained"
+          color="success"
+          className={classes.bigButton}
+        >
+          Take a test
         </Button>
       </div>
     </Paper>

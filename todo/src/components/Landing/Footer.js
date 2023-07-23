@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
     padding: "20px",
     textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
   },
   logo: {
     fontSize: "24px",
@@ -19,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   navigation: {
     display: "flex",
+    flexWrap: "wrap", // Allow navigation links to wrap on smaller screens
+    justifyContent: "center", // Center align navigation links on smaller screens
     marginBottom: "20px",
   },
   navLink: {
@@ -26,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
     marginLeft: "15px",
     marginRight: "15px",
+    marginBottom: "10px",
     transition: "color 0.3s ease",
     "&:hover": {
       color: "#e4e4e4",
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   socialIcons: {
     display: "flex",
-    gap: "10px",
+    justifyContent: "center", // Center align social icons on smaller screens
     fontSize: "20px",
   },
   whiteIcon: {
@@ -73,7 +73,7 @@ const Footer = () => {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+          className={classes.whiteIcon}
         >
           <FaFacebook />
         </a>
@@ -81,7 +81,7 @@ const Footer = () => {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+          className={classes.whiteIcon}
         >
           <FaTwitter />
         </a>
@@ -89,15 +89,15 @@ const Footer = () => {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+          className={classes.whiteIcon}
         >
           <FaInstagram />
         </a>
         <a
-          href="#"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+          className={classes.whiteIcon}
         >
           <FaLinkedin />
         </a>

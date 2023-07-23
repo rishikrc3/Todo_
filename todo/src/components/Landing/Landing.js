@@ -1,16 +1,15 @@
+import React from "react";
 import Navbar from "./Navbar";
 import SearchBar from "./Searchbar";
-import Buttons from "./Buttons";
+import Body from "./Body";
 import Footer from "./Footer";
-
-import React from "react";
 
 const Landing = () => {
   return (
     <div>
       <Navbar />
       <SearchBar />
-      <Buttons />
+      <Body />
       <Footer />
     </div>
   );

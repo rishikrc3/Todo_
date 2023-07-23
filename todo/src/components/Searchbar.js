@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "calc(8% + 20px)", // For medium screens, reduce the padding
     },
     [theme.breakpoints.down("sm")]: {
-      paddingTop: "calc(8% + 20px)", // For small screens, further reduce the padding
+      paddingTop: "calc(8% + px)", // For small screens, further reduce the padding
     },
   },
   searchField: {

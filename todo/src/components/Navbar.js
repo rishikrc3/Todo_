@@ -61,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerList: {
     width: 200,
+    backgroundColor: "#007bff", // Bluish background color for the drawer
+    height: "100%", // Make the drawer take full height of the screen
+    color: "white", // Text color
   },
 }));
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Button, Typography, Paper } from "@material-ui/core";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,9 +38,10 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 45%", // Adjusted width for medium screens, each button takes 45% of the row
     minWidth: "180px", // Increase the minimum width for larger buttons
     height: "60px", // Set the height of the buttons
-    fontSize: "18px", // Increase the font size of the button text
+    fontSize: "14px", // Increase the font size of the button text
     backgroundColor: "white", // Set the background color to white
     color: "#426b1f", // Set the text color to green
+    fontFamily: "var(--font-newsreader)",
   },
   bigButton: {
     flex: "1 0 100%", // Full width for the big button
@@ -73,25 +75,46 @@ const Buttons = () => {
         </Typography>
       </div>
       <div className={classes.buttonsContainer}>
-        <Button variant="contained" color="success" className={classes.button}>
+        <Button
+          variant="contained"
+          color="success"
+          className={classes.button}
+          endIcon={<ArrowForwardIcon />}
+        >
           Java <br />
           Go to resources
         </Button>
-        <Button variant="contained" color="success" className={classes.button}>
+        <Button
+          variant="contained"
+          color="success"
+          className={classes.button}
+          endIcon={<ArrowForwardIcon />}
+        >
           C++
           <br />
           Go to resources
         </Button>
-        <Button variant="contained" color="success" className={classes.button}>
+        <Button
+          variant="contained"
+          color="success"
+          className={classes.button}
+          endIcon={<ArrowForwardIcon />}
+        >
           C <br /> Go to resources
         </Button>
-        <Button variant="contained" color="success" className={classes.button}>
+        <Button
+          variant="contained"
+          color="success"
+          className={classes.button}
+          endIcon={<ArrowForwardIcon />}
+        >
           Python <br /> Go to resources
         </Button>
         <Button
           variant="contained"
           color="success"
           className={classes.bigButton}
+          endIcon={<ArrowForwardIcon />}
         >
           Take a test
         </Button>

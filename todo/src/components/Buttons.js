@@ -28,10 +28,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row", // Arrange buttons in a row
     justifyContent: "space-between",
     flexWrap: "wrap", // Allow buttons to wrap to the next row
-    gap: "10px",
+    gap: "20px",
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "space-between", // Adjust alignment for large screens
+    },
   },
   button: {
-    minWidth: "150px",
+    flex: "1 0 45%", // Adjusted width for medium screens, each button takes 45% of the row
+    minWidth: "180px", // Increase the minimum width for larger buttons
+    height: "60px", // Set the height of the buttons
+    fontSize: "18px", // Increase the font size of the button text
     backgroundColor: "white", // Set the background color to white
     color: "#426b1f", // Set the text color to green
   },

@@ -1,25 +1,46 @@
 import React from "react";
-import { makeStyles, Typography, Link } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: "#426b1f",
-    color: "white",
-    padding: theme.spacing(2),
+    color: "#ffffff",
+    padding: "20px",
     textAlign: "center",
-    marginTop: "20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
-  link: {
-    color: "white",
+  logo: {
+    fontSize: "24px",
+    fontWeight: "bold",
+    marginBottom: "10px",
+  },
+  navigation: {
+    display: "flex",
+    marginBottom: "20px",
+  },
+  navLink: {
     textDecoration: "none",
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    color: "#ffffff",
+    marginLeft: "15px",
+    marginRight: "15px",
+    transition: "color 0.3s ease",
     "&:hover": {
-      textDecoration: "underline",
+      color: "#e4e4e4",
     },
   },
-  copyright: {
-    marginTop: theme.spacing(2),
+  contact: {
+    marginBottom: "20px",
+  },
+  socialIcons: {
+    display: "flex",
+    gap: "10px",
+    fontSize: "20px",
+  },
+  whiteIcon: {
+    color: "#ffffff", // Set the icon color to white
   },
 }));
 
@@ -28,25 +49,59 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Typography variant="h6">Contact Us</Typography>
-      <Typography variant="body1">Email: info@example.com</Typography>
-      <Typography variant="body1">Phone: (123) 456-7890</Typography>
-
-      <div>
-        <Link href="#" className={classes.link}>
-          About Us
-        </Link>
-        <Link href="#" className={classes.link}>
-          Privacy Policy
-        </Link>
-        <Link href="#" className={classes.link}>
-          Terms of Service
-        </Link>
+      <div className={classes.logo}>Coding Buddy</div>
+      <div className={classes.navigation}>
+        <a href="/" className={classes.navLink}>
+          Home
+        </a>
+        <a href="/" className={classes.navLink}>
+          About
+        </a>
+        <a href="/" className={classes.navLink}>
+          Services
+        </a>
+        <a href="/" className={classes.navLink}>
+          Contact
+        </a>
       </div>
-
-      <Typography variant="body2" className={classes.copyright}>
-        &copy; 2023 Your Company. All rights reserved.
-      </Typography>
+      <div className={classes.contact}>
+        <p>Email: contact@example.com</p>
+        <p>Phone: +1 123-456-7890</p>
+      </div>
+      <div className={classes.socialIcons}>
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+        >
+          <FaFacebook />
+        </a>
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+        >
+          <FaTwitter />
+        </a>
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.whiteIcon} // Apply the whiteIcon class to the social links
+        >
+          <FaLinkedin />
+        </a>
+      </div>
     </footer>
   );
 };

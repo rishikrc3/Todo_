@@ -1,38 +1,50 @@
 import React from "react";
-import { makeStyles, Button, Typography } from "@material-ui/core";
+import { makeStyles, Button, Typography, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+    backgroundColor: "white", // Set the background color to green
+    color: "#426b1f", // Set the text color to white
+    boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+    maxWidth: "50%",
+    height: "70vh",
+
+    margin: "0 auto",
+    marginTop: "calc(8% + 0px)",
+    marginLeft: 0,
+    [theme.breakpoints.up("md")]: {
+      marginTop: "calc(8% + 20px)", // Adjust margin for medium and larger screens
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "calc(10% + 20px)", // Adjust margin for small screens
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "calc(15% + 20px)", // Adjust margin for extra-small screens
+    },
+  },
   buttonsContainer: {
     display: "flex",
-    justifyContent: "flex-start", // Align buttons to the left
+    flexDirection: "row", // Arrange buttons in a row
+    justifyContent: "space-between",
+    flexWrap: "wrap", // Allow buttons to wrap to the next row
     gap: "10px",
-    marginTop: "0px", // Add margin at the top to create space between the components
-    flexWrap: "wrap", // Allow buttons to wrap to the next line on smaller screens
   },
   button: {
     minWidth: "150px",
-    backgroundColor: "#426b1f",
-    color: "white", // Set the button text color to white
+    backgroundColor: "white", // Set the background color to white
+    color: "#426b1f", // Set the text color to green
   },
   headingContainer: {
-    textAlign: "left",
+    textAlign: "center", // Center align the text
     marginBottom: "10px",
-    [theme.breakpoints.up("sm")]: {
-      paddingTop: "calc(7% + 10px)", // Adjust padding for small and larger screens
-    },
-    [theme.breakpoints.down("xs")]: {
-      paddingTop: "calc(8% + 10px)", // Adjust padding for extra-small screens
-    },
-    [theme.breakpoints.up("md")]: {
-      paddingTop: "calc(4% + 10px)", // Adjust padding for medium-sized screens
-    },
   },
   heading: {
-    fontFamily: "var(--font-newsreader)", // Apply the specified font-family
-    color: "#426b1f", // Apply the specified color
-    fontSize: "28px", // Adjust the font size for the heading
-    fontWeight: "bold", // Apply bold font weight
-    letterSpacing: "-0.02em", // Adjust letter spacing for the heading
+    fontFamily: "var(--font-newsreader)",
+    color: "#000000",
+    fontSize: "32px",
+    fontWeight: "bold",
+    letterSpacing: "-0.02em",
   },
 }));
 
@@ -40,7 +52,7 @@ const Buttons = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <Paper elevation={3} className={classes.root}>
       <div className={classes.headingContainer}>
         <Typography variant="h6" className={classes.heading}>
           Trending Topics
@@ -60,7 +72,7 @@ const Buttons = () => {
           Button 4
         </Button>
       </div>
-    </div>
+    </Paper>
   );
 };
 

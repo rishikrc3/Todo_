@@ -75,15 +75,18 @@ const Buttons = () => {
       <div className={classes.buttonsContainer}>
         <Button variant="contained" color="success" className={classes.button}>
           Java <br />
+          Go to resources
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
           C++
+          <br />
+          Go to resources
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
-          C
+          C <br /> Go to resources
         </Button>
         <Button variant="contained" color="success" className={classes.button}>
-          Python
+          Python <br /> Go to resources
         </Button>
         <Button
           variant="contained"

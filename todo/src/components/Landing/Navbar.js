@@ -19,7 +19,7 @@ import { Link } from "react-router-dom"; // If you are using React Router
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    backgroundColor: "white",
+    backgroundColor: "#426b1f",
     color: "black",
     height: "60px",
   },
@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontFamily: "var(--font-newsreader)",
     fontWeight: 500,
-    fontSize: "32px",
+    fontSize: "30px",
     letterSpacing: "-0.01em",
     lineHeight: "100%",
-    color: "#426b1f",
+    color: "white",
     textDecoration: "none",
     textAlign: "left",
   },
@@ -42,12 +42,12 @@ const useStyles = makeStyles((theme) => ({
       display: "none", // Hide the links on small screens
     },
   },
-  greenButton: {
-    backgroundColor: "#426b1f", // Green background color
-    color: "white", // Text color
+  loginButton: {
+    backgroundColor: "white", // Green background color
+    color: "#426b1f", // Text color
     marginLeft: theme.spacing(2),
     "&:hover": {
-      backgroundColor: "#2b4811", // Darker green color on hover
+      backgroundColor: "#FOFOFO", // Darker white color on hover
     },
     [theme.breakpoints.down("sm")]: {
       display: "none", // Hide the login/signup button on small screens
@@ -88,7 +88,7 @@ const Navbar = () => {
         <MailIcon />
       </Button>
       {/* Green color button */}
-      <Button variant="contained" className={classes.greenButton}>
+      <Button variant="contained" className={classes.loginButton}>
         Login/Signup
       </Button>
     </div>
@@ -98,7 +98,9 @@ const Navbar = () => {
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
         <Link to="/" className={classes.title}>
-          <Typography variant="h6">Code Buddy</Typography>
+          <Typography variant="h6" className={classes.title}>
+            Code Buddy
+          </Typography>
         </Link>
         <IconButton
           edge="start"

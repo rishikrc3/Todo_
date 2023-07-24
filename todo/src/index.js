@@ -5,6 +5,7 @@ import App from "./App";
 import Landing from "./components/Landing/Landing";
 import Login from "./components/Authentication_/Login";
 import Signup from "./components/Authentication_/Signup";
+import GreenLoginPage from "./components/Authentication_/GreenLoginPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

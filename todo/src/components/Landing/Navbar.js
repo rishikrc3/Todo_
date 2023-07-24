@@ -65,6 +65,13 @@ const useStyles = makeStyles((theme) => ({
     height: "100%", // Make the drawer take full height of the screen
     color: "white", // Text color
   },
+  lowbox: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "0.7rem",
+    marginTop: "-15px", // Move the button up by -15px
+  },
 }));
 
 const Navbar = () => {
@@ -88,7 +95,12 @@ const Navbar = () => {
         <MailIcon />
       </Button>
       {/* Green color button */}
-      <Button variant="contained" className={classes.loginButton}>
+      <Button
+        component={Link}
+        variant="contained"
+        to="/signup"
+        className={classes.loginButton}
+      >
         Login/Signup
       </Button>
     </div>
@@ -127,6 +139,17 @@ const Navbar = () => {
               <ListItemText primary="Contact" />
             </ListItem>
           </List>
+          <div className={classes.lowbox}>
+            {/* Green color button */}
+            <Button
+              component={Link}
+              variant="contained"
+              to="/signup"
+              className={classes.loginButton}
+            >
+              Login/Signup
+            </Button>
+          </div>
         </div>
       </Drawer>
     </AppBar>

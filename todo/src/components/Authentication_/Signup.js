@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     gap: "0.4rem",
   },
   headingText: {
-    fontWeight: "bold",
     color: "#426b1f", // Set the green color
   },
   form: {
@@ -159,7 +158,7 @@ const Signup = () => {
           />
         </div>
         <div className={classes.checkboxContainer}>
-          <Checkbox className={classes.checkbox} />
+          <Checkbox className={classes.checkbox} required />
           <Typography variant="body2">
             By proceeding, you agree to the Terms and Conditions
           </Typography>

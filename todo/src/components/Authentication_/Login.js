@@ -1,48 +1,174 @@
 import React, { useState } from "react";
-import "./styles.css";
+import {
+  makeStyles,
+  Button,
+  Checkbox,
+  Typography,
+  Paper,
+  TextField,
+} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    height: "27rem",
+    width: "26rem",
+    backgroundColor: "#FAFAF5",
+    borderRadius: "24px",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    padding: "35px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "2.2rem",
+    border: "1.2px solid #E6E6E6",
+    fontFamily: "var(--font-newsreader)", // Set the custom font
+  },
+  heading: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.4rem",
+  },
+  headingText: {
+    color: "#426b1f", // Set the green color
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "1.6rem",
+  },
+  input: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1.3rem",
+    width: "100%",
+  },
+  inputBox: {
+    height: "2rem",
+    borderRadius: "10px",
+    outline: "none",
+    border: "1.5px solid #E6E6E6",
+    padding: "1rem",
+  },
+  checkboxContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5rem",
+  },
+  checkbox: {
+    fontWeight: "100",
+  },
+  lowbox: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "0.7rem",
+    marginTop: "-15px", // Move the button up by -10px
+  },
+  btn: {
+    backgroundColor: "#426b1f", // Set the green color
+    color: "#ffffff", // Set the text color to white
+    padding: "10px 30px",
+    outline: "none",
+    cursor: "pointer",
+    border: "1px solid #E6E6E6",
+    borderRadius: "10px",
+    fontFamily: "var(--font-newsreader)", // Set the custom font
+  },
+  btnHover: {
+    "&:hover": {
+      opacity: 0.9,
+    },
+  },
+}));
+
 const Login = () => {
+  const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+
+  // Check if all the text fields are filled
+  const checkAllFieldsFilled = () => {
+    if (email.trim() !== "" && password.trim() !== "") {
+      setAllFieldsFilled(true);
+    } else {
+      setAllFieldsFilled(false);
+    }
+  };
+
+  // Handle text field changes
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    checkAllFieldsFilled();
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    checkAllFieldsFilled();
+  };
+
+  // Handle Remember Me checkbox change
+  const handleRememberMeChange = (e) => {
+    setRememberMe(e.target.checked);
+  };
 
   return (
-    <>
-      <div className="container">
-        <div className="heading">
-          <h2>Login</h2>
-          <p>Enter your details below to continue</p>
-        </div>
-        <form action="" className="form">
-          <div className="input">
-            <input
-              type="email"
-              className="input__box"
-              placeholder="Email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />{" "}
-            <input
-              type="text"
-              className="input__box"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <h5 className="checkbox__LS">
-              <input type="checkbox" name="" id="" className="checkbox" />
-              Remember me
-            </h5>
-          </div>
-          <div className="lowbox__LS">
-            <button type="button" className="btn">
-              Submit
-            </button>
-            <p>Don't have any account? Sign up</p>
-          </div>
-        </form>
+    <Paper className={classes.container} elevation={3}>
+      <div className={classes.heading}>
+        <Typography variant="h5" className={classes.headingText}>
+          Login
+        </Typography>
+        <Typography variant="body2">
+          Enter your details below to continue
+        </Typography>
       </div>
-    </>
+      <form className={classes.form}>
+        <div className={classes.input}>
+          <TextField
+            type="email"
+            className={classes.inputBox}
+            placeholder="Email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+            required // Set the field as required
+          />
+          <TextField
+            type="password"
+            className={classes.inputBox}
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+            required // Set the field as required
+          />
+        </div>
+        <div className={classes.checkboxContainer}>
+          <Checkbox
+            className={classes.checkbox}
+            checked={rememberMe}
+            onChange={handleRememberMeChange}
+          />
+          <Typography variant="body2">Remember me</Typography>
+        </div>
+        <div className={classes.lowbox}>
+          <Button
+            variant="contained"
+            className={`${classes.btn} ${classes.btnHover}`}
+            disabled={!allFieldsFilled} // Disable the button if not all fields are filled
+          >
+            Submit
+          </Button>
+          <Typography variant="body2">
+            Don't have an account? Sign up
+          </Typography>
+        </div>
+      </form>
+    </Paper>
   );
 };
 

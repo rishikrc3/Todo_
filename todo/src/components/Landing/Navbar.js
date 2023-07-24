@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); //for dropdown
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

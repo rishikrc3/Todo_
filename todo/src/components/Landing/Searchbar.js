@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%", // On small screens, make it full-width
     },
     position: "absolute", // Position the search bar absolutely
-    paddingTop: "calc(6% + 10px)", // Place the search bar 8% from the top of the screen
+    paddingTop: "calc(6% + 10px)", // Place the search bar 6% from the top of the screen
     paddingBottom: "10px",
     left: "2%", // Adjust the horizontal position as needed
     transform: "translateY(-50%)", // Center the search bar vertically
@@ -62,7 +62,8 @@ const SearchBar = () => {
     setSearchQuery(e.target.value);
     // Handle your search logic here
   };
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     alert("Cicked!");
   };
 
@@ -90,7 +91,6 @@ const SearchBar = () => {
             </InputAdornment>
           ),
         }}
-        focused
       />
     </div>
   );

@@ -1,0 +1,78 @@
+.container {
+    height: 22rem;
+    width: 26rem;
+    background-color: #FAFAF5;
+    border-radius: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    border: 1.2px solid #E6E6E6;
+}
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+.heading h2 {
+    font-weight: bold;
+}
+.heading p {
+    font-size: small;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    gap:1.3rem;
+    width: 100%;
+}
+.input__box {
+    height: 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1.5px solid var(--borderColor);
+    padding: 1rem;
+}
+.checkbox__LS {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.checkbox__LS input {
+    font-weight: 100;
+}
+.lowbox__LS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
+}
+.checkbox {
+    border: 1px solid var(--borderColor);
+}
+h5{
+    font-size: 14px;
+    font-weight: 400;
+}
+.btn {
+    background-color: var(--primaryColor);
+    color: var(--white);
+    padding: 10px 30px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+}
+.btn:hover {
+    opacity:.9;
+}

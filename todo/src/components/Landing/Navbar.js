@@ -110,7 +110,12 @@ const Navbar = () => {
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
         <Link to="/" className={classes.title}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography
+            variant="h6"
+            component={Link}
+            to="/"
+            className={classes.title}
+          >
             Code Buddy
           </Typography>
         </Link>

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Button, Typography, Paper } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Buttons = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Paper elevation={3} className={classes.root}>
@@ -121,6 +123,7 @@ const Buttons = () => {
           color="success"
           className={classes.bigButton}
           endIcon={<ArrowForwardIcon />}
+          onClick={() => navigate("/level")}
         >
           Take a test
         </Button>

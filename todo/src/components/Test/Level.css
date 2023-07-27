@@ -1,0 +1,35 @@
+.level-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+}
+
+.level-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.level-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.level-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.level-option input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
